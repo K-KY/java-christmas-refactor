@@ -49,4 +49,9 @@ public class Date {
     public boolean isWeekend() {
         return Week.isWeekend(orderedDate());
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(date);
+    }
 }
