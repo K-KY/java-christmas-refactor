@@ -21,7 +21,8 @@ public class SystemMessages {
     public static final String TOTAL_BENEFIT = "<총혜택 금액>";
     public static final String SPECIAL_DISCOUNT = "특별 할인 이벤트가 적용됩니다!";
     public static final String DISCOUNT_THOUSAND = "총 주문 금액에서 1000원 할인";
-    public static final String BENEFIT_PREVIEW = "12월 3일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!\n";
+    public static final String BENEFIT_PREVIEW = "일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!\n";
+    public static final String ORDER_MONTH = "12월 ";
     public static final String ORDERED_MENU = "<주문 메뉴>";
     public static final String DISCOUNT_HISTORY = "<혜택 내역>";
     public static final String AFTER_DISCOUNT = "<할인 후 예상 결제 금액>";
