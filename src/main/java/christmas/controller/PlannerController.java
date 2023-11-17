@@ -59,16 +59,11 @@ public class PlannerController {
 
     private void result(Date date, UserOrder userOrder) {
         OutputView.totalAmount(orderedAmount.totalAmount());
-        OutputView.present(presentDiscount());
         Benefit benefit = new DiscountController(orderedAmount).calculateDiscount(date, userOrder);
+        OutputView.present(benefit.present());
         OutputView.discountHistory(benefit.toString());
         OutputView.totalDiscount(orderedAmount.totalDiscount());
         OutputView.afterDiscount(orderedAmount.afterDiscount());
         OutputView.grantedBadge(orderedAmount.getBadge());
-    }
-
-    private String presentDiscount() {
-        PresentDiscounter presentDiscounter = new PresentDiscounter(orderedAmount);
-        return presentDiscounter.discount();
     }
 }
