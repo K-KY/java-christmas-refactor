@@ -1,5 +1,6 @@
 package christmas.controller;
 
+import christmas.domain.discounter.PresentDiscounter;
 import christmas.domain.orderinfo.Benefit;
 import christmas.domain.orderinfo.Date;
 import christmas.domain.orderinfo.OrderedAmount;
@@ -24,7 +25,8 @@ public class DiscountController {
         orderedAmount.discount(
                 weekDiscount(userOrder, weekend)
                         + specialDiscount(date)
-                        + christmasDiscount(date));
+                        + christmasDiscount(date)
+                        + presentDiscount());
         return benefit;
     }
 
@@ -56,5 +58,10 @@ public class DiscountController {
     private int christmasDiscount(Date date) {
         ChristmasDiscounter christmasDiscounter = new ChristmasDiscounter(orderedAmount);
         return christmasDiscounter.discount(date, benefit);
+    }
+
+    private int presentDiscount() {
+        PresentDiscounter presentDiscounter = new PresentDiscounter(orderedAmount);
+        return presentDiscounter.discount(benefit);
     }
 }
