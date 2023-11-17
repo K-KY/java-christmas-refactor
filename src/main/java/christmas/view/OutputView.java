@@ -85,8 +85,8 @@ public class OutputView {
         }
     }
 
-    public static void orderContent(UserOrder userOrder) {
-        System.out.println(BENEFIT_PREVIEW);
+    public static void orderContent(UserOrder userOrder, Date date) {
+        System.out.println(ORDER_MONTH + date +  BENEFIT_PREVIEW);
         System.out.println(ORDERED_MENU);
         System.out.println(userOrder);
     }
