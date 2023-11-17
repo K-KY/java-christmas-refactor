@@ -65,6 +65,7 @@ class OrderedAmountTest {
     @Test
     @DisplayName("금액에 맞는 배지를 리턴한다")
     void getBadge() {
+        orderedAmount.discount(10000);
         assertThat(orderedAmount.getBadge().getName()).isEqualTo("트리");
     }
 }
