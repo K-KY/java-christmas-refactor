@@ -4,9 +4,12 @@ import christmas.domain.ChristmasBadge;
 import christmas.domain.orderinfo.Date;
 import christmas.domain.MenuBoard;
 import christmas.domain.orderinfo.UserOrder;
+
 import static christmas.view.SystemMessages.*;
 
 public class OutputView {
+
+    private static final String NO_PRESENT = "없음";
 
     public static void startMessage() {
         System.out.println(GREETING);
@@ -86,7 +89,7 @@ public class OutputView {
     }
 
     public static void orderContent(UserOrder userOrder, Date date) {
-        System.out.println(ORDER_MONTH + date +  BENEFIT_PREVIEW);
+        System.out.println(ORDER_MONTH + date + BENEFIT_PREVIEW);
         System.out.println(ORDERED_MENU);
         System.out.println(userOrder);
     }
@@ -117,8 +120,9 @@ public class OutputView {
     }
 
     public static void presentAnnouncement(String present) {
-        if (present.length() != 0) {
-            System.out.println(PRESENT_MESSAGE);
+        if (present.equals(NO_PRESENT)) {
+            return;
         }
+        System.out.println(PRESENT_MESSAGE);
     }
 }
