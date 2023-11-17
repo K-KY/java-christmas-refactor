@@ -2,6 +2,7 @@ package christmas.domain.discounter;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import christmas.domain.orderinfo.Benefit;
 import christmas.domain.orderinfo.OrderedAmount;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -20,7 +21,7 @@ public class PresentDiscounterTest {
     void discountTest() {
         orderedAmount.addTotalAmount(120000);
         PresentDiscounter presentDiscounter = new PresentDiscounter(orderedAmount);
-        assertThat(presentDiscounter.discount()).isEqualTo("샴페인 1개");
+        assertThat(presentDiscounter.discount(new Benefit())).isEqualTo(25000);
 
     }
 
@@ -29,7 +30,7 @@ public class PresentDiscounterTest {
     void amountUnder120000() {
         orderedAmount.addTotalAmount(110000);
         PresentDiscounter presentDiscounter = new PresentDiscounter(orderedAmount);
-        assertThat(presentDiscounter.discount()).isEqualTo("");
+        assertThat(presentDiscounter.discount(new Benefit())).isEqualTo(0);
 
     }
 }
