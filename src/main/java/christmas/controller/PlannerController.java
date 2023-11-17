@@ -21,7 +21,7 @@ public class PlannerController {
         Date date = callDate();
         discountAnnouncement(date);
         UserOrder userOrder = callUserOrder();
-        OutputView.orderContent(userOrder);
+        OutputView.orderContent(userOrder, date);
         userOrder.addMenuPrice(orderedAmount);
         result(date, userOrder);
     }
