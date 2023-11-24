@@ -41,7 +41,7 @@ public class OrderValidator {
     }
 
     public static void menuForm(List<String> userOrder) {
-        if (userOrder.size() <= 1) {
+        if (userOrder.size() != 2) {// "-"를 기준으로 나눈 리스트니까 {메뉴, 수량} 이렇게 되어 있음 만약 이 길이가 2가 아니라면 형식이 잘못됨
             throw new IllegalArgumentException(INVALID_ORDER);
         }
     }
