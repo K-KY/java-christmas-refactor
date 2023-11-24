@@ -9,7 +9,6 @@ import static christmas.view.SystemMessages.*;
 
 public class OutputView {
 
-    private static final String NO_PRESENT = "없음";
 
     public static void startMessage() {
         System.out.println(GREETING);
@@ -120,7 +119,7 @@ public class OutputView {
     }
 
     public static void presentAnnouncement(String present) {
-        if (present.equals(NO_PRESENT)) {
+        if (NONE.contains(present)) {
             return;
         }
         System.out.println(PRESENT_MESSAGE);
